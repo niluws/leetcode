@@ -1,11 +1,8 @@
-import re
-
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
+        s = [ch.lower() for ch in s if ch.isalnum()]
         return s == s[::-1]
 
 
-
-print(Solution().isPalindrome("A man, a plan, a canal -- Panama"))
+print(Solution().isPalindrome("car fa"))
